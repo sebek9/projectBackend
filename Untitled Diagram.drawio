@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-03-27T23:41:17.598Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15" etag="t3MVeX205FTfV913YGn4" version="12.9.3" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2020-03-27T23:52:11.937Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15" etag="vXQlbKSCivvv-paG6--I" version="12.9.3" type="github" pages="8">
   <diagram name="Payment app" id="bOi7TXeX7I52hEZnP7ve">
     <mxGraphModel dx="876" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -11,7 +11,7 @@
           <mxGeometry x="100" y="20" width="550" height="60" as="geometry" />
         </mxCell>
         <mxCell id="knnFvPgw1yvpynY7Gt7V-4" value="View payments" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="knnFvPgw1yvpynY7Gt7V-1">
-          <mxGeometry x="460" y="360" width="160" height="160" as="geometry" />
+          <mxGeometry x="334" y="360" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="knnFvPgw1yvpynY7Gt7V-5" value="Pending payments" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="knnFvPgw1yvpynY7Gt7V-1">
           <mxGeometry x="570" y="160" width="160" height="160" as="geometry" />
@@ -20,7 +20,13 @@
           <mxGeometry x="330" y="160" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="knnFvPgw1yvpynY7Gt7V-10" value="Create payment in EUR" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="knnFvPgw1yvpynY7Gt7V-1">
-          <mxGeometry x="190" y="360" width="160" height="160" as="geometry" />
+          <mxGeometry x="80" y="360" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="qnGr123daJyqz_8JADEp-0" value="@ Mail wasyłany po t&lt;u&gt;ransakcji&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="knnFvPgw1yvpynY7Gt7V-1">
+          <mxGeometry x="40" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S-ZwJGBQemn9_xBxSltZ-0" value="Customer info" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="knnFvPgw1yvpynY7Gt7V-1">
+          <mxGeometry x="570" y="360" width="160" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -70,7 +76,7 @@
         <mxCell id="IcQTALJkjeQ2GP0vRlx8-0" />
         <mxCell id="IcQTALJkjeQ2GP0vRlx8-1" parent="IcQTALJkjeQ2GP0vRlx8-0" />
         <mxCell id="Ioni6Q_HCIrfhFDIKyMe-0" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="IcQTALJkjeQ2GP0vRlx8-1">
-          <mxGeometry x="90" y="15" width="520" height="520" as="geometry" />
+          <mxGeometry x="70" y="15" width="520" height="520" as="geometry" />
         </mxCell>
         <mxCell id="3cdsQLv6Hzp6W_YoWD96-0" value="Create payment in PLN form" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IcQTALJkjeQ2GP0vRlx8-1">
           <mxGeometry x="300" y="50" width="120" height="60" as="geometry" />
@@ -112,6 +118,9 @@
             <mxGeometry x="100" y="490" width="320" height="30" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="rPi9KlhqouvHbXDHkzxk-0" value="dodatkowo API zewnetrzne sprawdzajace kod SWIFT dla konta" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="IcQTALJkjeQ2GP0vRlx8-1">
+          <mxGeometry x="620" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -202,7 +211,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="F_fdzW-EP-Z7d2RO_jLA" name="Page-11">
+  <diagram id="F_fdzW-EP-Z7d2RO_jLA" name="viewPendingTrx">
     <mxGraphModel dx="876" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="2B8fuafmfYr8Yx0rNGAw-0" />
@@ -215,6 +224,26 @@
         </mxCell>
         <mxCell id="JfowEpYLLo5RAFqn-igc-2" value="getPaymentsPending" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2B8fuafmfYr8Yx0rNGAw-1">
           <mxGeometry x="310" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5HJVZ_hUIBSridcGdFiM" name="Customer info">
+    <mxGraphModel dx="876" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="CfS23XBNRRwCJlJUgigH-0" />
+        <mxCell id="CfS23XBNRRwCJlJUgigH-1" parent="CfS23XBNRRwCJlJUgigH-0" />
+        <mxCell id="Rgd-PXUdsVc80OMEQqFF-0" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="CfS23XBNRRwCJlJUgigH-1">
+          <mxGeometry x="90" y="10" width="520" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="Rgd-PXUdsVc80OMEQqFF-1" value="Customer info" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="CfS23XBNRRwCJlJUgigH-1">
+          <mxGeometry x="300" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rgd-PXUdsVc80OMEQqFF-2" value="Save button" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="CfS23XBNRRwCJlJUgigH-1">
+          <mxGeometry x="330" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rgd-PXUdsVc80OMEQqFF-3" value="name&lt;br&gt;surname&lt;br&gt;adress&lt;br&gt;email" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="CfS23XBNRRwCJlJUgigH-1">
+          <mxGeometry x="120" y="140" width="120" height="230" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
