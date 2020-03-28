@@ -1,10 +1,10 @@
-package com.kodilla.carrental;
+package com.kodilla.bankApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CarrentalApplicationTests {
+class BankApplicationTests {
 
 	@Test
 	void contextLoads() {
