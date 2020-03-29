@@ -12,7 +12,7 @@ public class PaymentMapper {
     public Payment mapToPayment(final PaymentDto paymentDto){
         return new Payment(
                 paymentDto.getId(),
-                paymentDto.getAccountNumber(),
+                paymentDto.getAccount(),
                 paymentDto.getAmount(),
                 paymentDto.getCurrency()
         );
@@ -20,7 +20,7 @@ public class PaymentMapper {
     public PaymentDto mapToPaymentDto(final Payment payment){
         return new PaymentDto(
                 payment.getId(),
-                payment.getAccountNumber(),
+                payment.getAccount(),
                 payment.getAmount(),
                 payment.getCurrency()
         );
@@ -28,7 +28,7 @@ public class PaymentMapper {
 
     public List<PaymentDto>mapToPaymentDtoList(final List<Payment>paymentList){
         return paymentList.stream()
-                .map(p->new PaymentDto(p.getId(),p.getAccountNumber(),p.getAmount(),p.getCurrency()))
+                .map(p->new PaymentDto(p.getId(),p.getAccount(),p.getAmount(),p.getCurrency()))
                 .collect(Collectors.toList());
     }
 }

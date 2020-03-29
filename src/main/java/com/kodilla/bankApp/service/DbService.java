@@ -19,4 +19,7 @@ public class DbService {
     public Optional<Payment> getPayment(Long id){
         return repository.findById(id);
     }
+    public Payment savePayment(final Payment payment){
+        return repository.save(payment);
+    }
 }

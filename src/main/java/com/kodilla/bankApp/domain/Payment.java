@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @AllArgsConstructor
@@ -13,12 +14,16 @@ import java.math.BigDecimal;
 @Entity(name="payments")
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @Column(name="accountNumber") //do weryfikacji
-    private String accountNumber;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name="account") //do weryfikacji
+    private String account;
+
     @Column(name="amount")
-    private double amount;//change to bigDecimal
+    private Double amount;//change to bigDecimal
+
     @Column(name="currency")
     private String currency;
 

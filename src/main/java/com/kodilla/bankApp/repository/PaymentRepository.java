@@ -2,6 +2,7 @@ package com.kodilla.bankApp.repository;
 
 import com.kodilla.bankApp.domain.Payment;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,4 +14,7 @@ public interface PaymentRepository extends CrudRepository<Payment,Long> {
 
     @Override
     Optional<Payment> findById(Long id);
+
+    @Override
+    Payment save(Payment payment);
 }
