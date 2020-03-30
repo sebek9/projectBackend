@@ -1,5 +1,6 @@
 package com.kodilla.bankApp.service;
 
+import com.kodilla.bankApp.domain.Mail;
 import com.kodilla.bankApp.domain.Payment;
 import com.kodilla.bankApp.domain.Receiver;
 import com.kodilla.bankApp.repository.PaymentRepository;
@@ -15,6 +16,10 @@ public class DbService {
     @Autowired
     private PaymentRepository repository;
 
+    @Autowired
+    private SimpleEmailService emailService;
+
+
     public List<Payment> getAllPayments(){
         return repository.findAll();
     }
@@ -22,6 +27,9 @@ public class DbService {
         return repository.findById(id);
     }
     public Payment savePayment(final Payment payment){
+        //do poprawy - email dziala
+    emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Nowa płatność","Płatnośc została zlecona"));
         return repository.save(payment);
     }
 }
+
