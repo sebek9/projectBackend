@@ -6,6 +6,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+
+
 @Component
 public class NbpClient {
 
@@ -15,11 +21,14 @@ public class NbpClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    public NbpDto getExchange() {
+    public List<NbpDto> getExchangeRates() {
 
-        NbpDto response = restTemplate.getForObject(
+        NbpDto[] nbpResponse = restTemplate.getForObject(
                 nbpApiEndpoint,
-                NbpDto.class);
-        return response;
+                NbpDto[].class);
+    if (nbpResponse !=null){
+        return Arrays.asList(nbpResponse);
+    }
+    return new ArrayList<>();
     }
 }

@@ -7,18 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/rates/a")
+@RequestMapping("/tables")
 public class nbpController {
 
     @Autowired
     private NbpClient nbpClient;
 
-    @RequestMapping(method = RequestMethod.GET,value = "/eur")
-    public void getCourse(){
-        NbpDto course=nbpClient.getExchange();
+    @RequestMapping(method = RequestMethod.GET,value = "/a/")
+    public void getExchangeRates(){
+        List<NbpDto> rates = nbpClient.getExchangeRates();
 
-        System.out.println(course.getRate());
+        rates.forEach(NbpDto-> System.out.println(NbpDto.getRate() + NbpDto.getCode() + NbpDto.getCurrency()));
+
 
     }
 }
+
+

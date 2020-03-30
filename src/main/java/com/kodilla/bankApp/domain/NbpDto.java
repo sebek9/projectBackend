@@ -10,6 +10,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NbpDto {
+    private String currency;
+    private String code;
     private BigDecimal rate;
+
+
 
 }
