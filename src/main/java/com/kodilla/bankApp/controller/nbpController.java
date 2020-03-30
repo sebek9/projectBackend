@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/v1/exchange")
 public class nbpController {
 
     @Autowired
     private NbpClient nbpClient;
 
-    @RequestMapping(method = RequestMethod.GET,value = "/latest/")
+    @RequestMapping(method = RequestMethod.GET,value = "/getExchange")
     public void getExchangeRates(){
         List<NbpDto> rates = nbpClient.getExchangeRates();
 
-        rates.forEach(NbpDto-> System.out.println(NbpDto.getRate() + NbpDto.getBase() + NbpDto.getDate()));
+        rates.forEach(NbpDto-> System.out.println(NbpDto.getRates() + NbpDto.getBase() + NbpDto.getDate()));
 
 
     }
