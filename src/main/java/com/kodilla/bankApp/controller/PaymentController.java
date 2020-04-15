@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("v1/payment")
+@CrossOrigin(origins ="*")
 public class PaymentController {
     @Autowired
     private DbService service;
