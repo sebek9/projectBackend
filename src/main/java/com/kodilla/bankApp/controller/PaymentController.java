@@ -18,25 +18,25 @@ public class PaymentController {
     @Autowired
     private PaymentMapper paymentMapper;
 
-    @RequestMapping(method = RequestMethod.GET,value = "getPayments")
+    @RequestMapping(method = RequestMethod.GET,value = "/getPayments")
     public List<PaymentDto> getPayments() {
         return paymentMapper.mapToPaymentDtoList(service.getAllPayments());
     }
 
-    @RequestMapping(method = RequestMethod.GET,value = "getPayment")
+    @RequestMapping(method = RequestMethod.GET,value = "/getPayment")
     public PaymentDto getPayment(Long paymentId) throws PaymenNotFoundException{
         return paymentMapper.mapToPaymentDto(service.getPayment(paymentId).orElseThrow(PaymenNotFoundException::new));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "deletePayment")
+    @RequestMapping(method = RequestMethod.DELETE,value = "/deletePayment")
     public void deletePayment(Long paymentId){
 
     }
-    @RequestMapping(method = RequestMethod.PUT,value = "updatePayment")
+    @RequestMapping(method = RequestMethod.PUT,value = "/updatePayment")
     public PaymentDto updatePayment(@RequestBody PaymentDto paymentDto){
         return paymentMapper.mapToPaymentDto(service.savePayment(paymentMapper.mapToPayment(paymentDto))); }
 
-    @RequestMapping(method = RequestMethod.POST,value = "createPayment",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST,value = "/createPayment",consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createPayment(@RequestBody PaymentDto paymentDto){
     service.savePayment(paymentMapper.mapToPayment(paymentDto));
    }

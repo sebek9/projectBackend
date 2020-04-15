@@ -23,25 +23,25 @@ public class ReceiverController {
     @Autowired
     private ReceiverMapper receiverMapper;
 
-    @RequestMapping(method = RequestMethod.GET,value = "getReceivers")
+    @RequestMapping(method = RequestMethod.GET,value = "/getReceivers")
     public List<ReceiverDto> getReceivers() {
         return receiverMapper.mapToReceiverDtoList(service.getAllReceivers());
     }
 
-    @RequestMapping(method = RequestMethod.GET,value = "getReceiver")
+    @RequestMapping(method = RequestMethod.GET,value = "/getReceiver")
     public ReceiverDto getReceiver(Long receiverId) throws ReceiverNotFoundException{
         return receiverMapper.mapToReceiverDto(service.getReceiver(receiverId).orElseThrow(ReceiverNotFoundException::new));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "deleteReceiver")
+    @RequestMapping(method = RequestMethod.DELETE,value = "/deleteReceiver")
     public void deleteReceiver(Long receiverId){
 
     }
-    @RequestMapping(method = RequestMethod.PUT,value = "updateReceiver")
+    @RequestMapping(method = RequestMethod.PUT,value = "/updateReceiver")
     public ReceiverDto updateReceiver(@RequestBody ReceiverDto receiverDto){
         return receiverMapper.mapToReceiverDto(service.saveReceiver(receiverMapper.mapToReceiver(receiverDto))); }
 
-    @RequestMapping(method = RequestMethod.POST,value = "createReceiver",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST,value = "/createReceiver",consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createReceiver(@RequestBody ReceiverDto receiverDto){
         service.saveReceiver(receiverMapper.mapToReceiver(receiverDto));
     }
