@@ -19,7 +19,6 @@ public class DbService {
     @Autowired
     private SimpleEmailService emailService;
 
-
     public List<Payment> getAllPayments(){
         return repository.findAll();
     }
