@@ -37,8 +37,8 @@ public class PaymentController {
     public PaymentDto updatePayment(@RequestBody PaymentDto paymentDto){
         return paymentMapper.mapToPaymentDto(service.savePayment(paymentMapper.mapToPayment(paymentDto))); }
 
-        //,consumes = MediaType.APPLICATION_JSON_VALUE
-    @RequestMapping(method = RequestMethod.POST,value = "/createPayment")
+        //
+    @RequestMapping(method = RequestMethod.POST,value = "/createPayment",consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createPayment(@RequestBody PaymentDto paymentDto){
     service.savePayment(paymentMapper.mapToPayment(paymentDto));
    }
