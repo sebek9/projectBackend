@@ -2,7 +2,7 @@ package com.kodilla.bankApp.mapper;
 
 
 import com.kodilla.bankApp.domain.Receiver;
-import com.kodilla.bankApp.domain.ReceiverDto;
+import com.kodilla.bankApp.domain.dTo.ReceiverDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

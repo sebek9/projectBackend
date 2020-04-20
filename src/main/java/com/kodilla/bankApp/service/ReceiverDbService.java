@@ -15,7 +15,7 @@ public class ReceiverDbService {
     private ReceiverRepository repository;
 
     @Autowired
-    private SimpleEmailService emailService;
+    private EmailService emailService;
 
     public List<Receiver> getAllReceivers(){
         return repository.findAll();
@@ -27,6 +27,10 @@ public class ReceiverDbService {
         //do poprawy - email dziala
         emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Odbiorca","Nowy odbiorca został dodany"));
         return repository.save(receiver);
+    }
+
+    public void deleteReceiver(final Long id) {
+        repository.deleteById(id);
     }
 }
 

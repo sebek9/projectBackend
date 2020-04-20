@@ -2,9 +2,7 @@ package com.kodilla.bankApp.service;
 
 import com.kodilla.bankApp.domain.Mail;
 import com.kodilla.bankApp.domain.Payment;
-import com.kodilla.bankApp.domain.Receiver;
 import com.kodilla.bankApp.repository.PaymentRepository;
-import com.kodilla.bankApp.repository.ReceiverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DbService {
+public class PaymentService {
     @Autowired
     private PaymentRepository repository;
 
     @Autowired
-    private SimpleEmailService emailService;
+    private EmailService emailService;
 
     public List<Payment> getAllPayments(){
         return repository.findAll();
@@ -29,6 +27,10 @@ public class DbService {
         //do poprawy - email dziala
     emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Nowa płatność","Płatnośc została zlecona"));
         return repository.save(payment);
+    }
+
+    public void deletePayment(final Long id) {
+        repository.deleteById(id);
     }
 }
 

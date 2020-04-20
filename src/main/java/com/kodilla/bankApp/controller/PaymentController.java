@@ -1,8 +1,9 @@
 package com.kodilla.bankApp.controller;
 
-import com.kodilla.bankApp.domain.PaymentDto;
+import com.kodilla.bankApp.controller.exceptions.PaymentNotFoundException;
+import com.kodilla.bankApp.domain.dTo.PaymentDto;
 import com.kodilla.bankApp.mapper.PaymentMapper;
-import com.kodilla.bankApp.service.DbService;
+import com.kodilla.bankApp.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import java.util.List;
 @CrossOrigin(origins ="*")
 public class PaymentController {
     @Autowired
-    private DbService service;
+    private PaymentService service;
     @Autowired
     private PaymentMapper paymentMapper;
 
@@ -25,12 +26,12 @@ public class PaymentController {
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/getPayment")
-    public PaymentDto getPayment(Long paymentId) throws PaymenNotFoundException{
-        return paymentMapper.mapToPaymentDto(service.getPayment(paymentId).orElseThrow(PaymenNotFoundException::new));
+    public PaymentDto getPayment(Long paymentId) throws PaymentNotFoundException {
+        return paymentMapper.mapToPaymentDto(service.getPayment(paymentId).orElseThrow(PaymentNotFoundException::new));
     }
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/deletePayment")
-    public void deletePayment(Long paymentId){
+    public void deletePayment(@PathVariable Long paymentId){
 
     }
     @RequestMapping(method = RequestMethod.PUT,value = "/updatePayment")
@@ -43,4 +44,3 @@ public class PaymentController {
     service.savePayment(paymentMapper.mapToPayment(paymentDto));
    }
 }
-//@ResponseBody String PostService

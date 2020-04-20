@@ -1,4 +1,4 @@
-package com.kodilla.bankApp.domain;
+package com.kodilla.bankApp.domain.dTo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

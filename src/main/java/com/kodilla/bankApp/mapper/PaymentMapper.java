@@ -1,7 +1,7 @@
 package com.kodilla.bankApp.mapper;
 
 import com.kodilla.bankApp.domain.Payment;
-import com.kodilla.bankApp.domain.PaymentDto;
+import com.kodilla.bankApp.domain.dTo.PaymentDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

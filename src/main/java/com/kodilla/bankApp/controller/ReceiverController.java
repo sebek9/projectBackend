@@ -1,10 +1,8 @@
 package com.kodilla.bankApp.controller;
 
-import com.kodilla.bankApp.domain.PaymentDto;
-import com.kodilla.bankApp.domain.ReceiverDto;
-import com.kodilla.bankApp.mapper.PaymentMapper;
+import com.kodilla.bankApp.controller.exceptions.ReceiverNotFoundException;
+import com.kodilla.bankApp.domain.dTo.ReceiverDto;
 import com.kodilla.bankApp.mapper.ReceiverMapper;
-import com.kodilla.bankApp.service.DbService;
 import com.kodilla.bankApp.service.ReceiverDbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,14 +25,10 @@ public class ReceiverController {
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/getReceiver")
-    public ReceiverDto getReceiver(Long receiverId) throws ReceiverNotFoundException{
+    public ReceiverDto getReceiver(Long receiverId) throws ReceiverNotFoundException {
         return receiverMapper.mapToReceiverDto(service.getReceiver(receiverId).orElseThrow(ReceiverNotFoundException::new));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "/deleteReceiver")
-    public void deleteReceiver(Long receiverId){
-
-    }
     @RequestMapping(method = RequestMethod.PUT,value = "/updateReceiver")
     public ReceiverDto updateReceiver(@RequestBody ReceiverDto receiverDto){
         return receiverMapper.mapToReceiverDto(service.saveReceiver(receiverMapper.mapToReceiver(receiverDto))); }
@@ -43,5 +37,15 @@ public class ReceiverController {
     public void createReceiver(@RequestBody ReceiverDto receiverDto){
         service.saveReceiver(receiverMapper.mapToReceiver(receiverDto));
     }
-}
 
+    @RequestMapping(method = RequestMethod.DELETE,value = "/deleteReceiver{receiverId}",consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void deleteReceiver(@PathVariable Long receiverId){
+        service.deleteReceiver(receiverId);
+
+    }
+}
+/*
+@RequestMapping (method = RequestMethod.DELETE,value ="/task/{taskId}" )
+    public void deleteTask(@PathVariable Long taskId){ service.deleteTask(taskId);
+    }
+ */
