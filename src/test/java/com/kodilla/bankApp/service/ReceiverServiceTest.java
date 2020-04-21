@@ -20,7 +20,7 @@ package com.kodilla.bankApp.service;
         import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ReceiverPaymentServiceTest {
+public class ReceiverServiceTest {
 
     @InjectMocks
     private ReceiverDbService receiverDbService;
