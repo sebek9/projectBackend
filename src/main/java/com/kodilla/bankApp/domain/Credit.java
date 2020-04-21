@@ -23,6 +23,7 @@ public class Credit {
     @Column(name="credit_type")
     private String creditType;
 
+    //TODO need to be changed to BigDecimal
     @Column(name="amount")
     private Integer amount;
 

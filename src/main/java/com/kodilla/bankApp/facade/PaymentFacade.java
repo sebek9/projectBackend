@@ -14,6 +14,7 @@ import java.util.List;
 @Component
 public class PaymentFacade {
 
+    //TODO add logger
     private static final Logger LOGGER = LoggerFactory.getLogger(PaymentFacade.class);
 
     @Autowired

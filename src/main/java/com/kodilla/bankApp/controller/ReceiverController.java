@@ -39,13 +39,9 @@ public class ReceiverController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/deleteReceiver{receiverId}",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteReceiver(@PathVariable Long receiverId){
+    public void deleteReceiver(@RequestParam Long receiverId){
         service.deleteReceiver(receiverId);
 
     }
 }
-/*
-@RequestMapping (method = RequestMethod.DELETE,value ="/task/{taskId}" )
-    public void deleteTask(@PathVariable Long taskId){ service.deleteTask(taskId);
-    }
- */
+

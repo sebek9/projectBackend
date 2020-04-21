@@ -30,7 +30,8 @@ public class CardController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/deleteCard")
-    public void deleteCard(@PathVariable Long cardId){
+    public void deleteCard(@RequestParam Long cardId){
+        service.deleteCard(cardId);
 
     }
     @RequestMapping(method = RequestMethod.PUT,value = "/updateCard")

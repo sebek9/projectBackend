@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class PaymentDto {
     private Long id;
     private String account;
-    private Double amount; //change to bigDecimal
+    private Double amount;
     private String currency;
 
 }

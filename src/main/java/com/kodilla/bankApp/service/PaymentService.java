@@ -24,8 +24,8 @@ public class PaymentService {
         return repository.findById(id);
     }
     public Payment savePayment(final Payment payment){
-        //do poprawy - email dziala
- //   emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Nowa płatność","Płatnośc została zlecona"));
+        //TODO mail functionality works - > need to be implemented in other services
+    emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Nowa płatność","Płatnośc została zlecona"));
         return repository.save(payment);
     }
 

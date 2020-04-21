@@ -1,10 +1,7 @@
 package com.kodilla.bankApp.service;
 
 import com.kodilla.bankApp.domain.Bond;
-import com.kodilla.bankApp.domain.Mail;
-import com.kodilla.bankApp.domain.Payment;
 import com.kodilla.bankApp.repository.BondRepository;
-import com.kodilla.bankApp.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

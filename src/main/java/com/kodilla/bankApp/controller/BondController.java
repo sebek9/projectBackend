@@ -29,7 +29,8 @@ public class BondController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/deleteBond")
-    public void deleteBond(@PathVariable Long bondId){
+    public void deleteBond(@RequestParam Long bondId){
+        service.deleteBond(bondId);
 
     }
     @RequestMapping(method = RequestMethod.PUT,value = "/updateBond")

@@ -24,7 +24,7 @@ public class ReceiverDbService {
         return repository.findById(id);
     }
     public Receiver saveReceiver(final Receiver receiver){
-        //do poprawy - email dziala
+        //TODO mail functionality works - > need to be implemented in other services
         emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Odbiorca","Nowy odbiorca został dodany"));
         return repository.save(receiver);
     }

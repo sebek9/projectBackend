@@ -13,16 +13,20 @@ import java.math.BigDecimal;
 @Getter
 @Entity(name="payments")
 public class Payment {
+
+    //TODO need to be extended
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="account") //do weryfikacji
+    @Column(name="account")
     private String account;
 
+    //TODO need to be changed to BigDecimal
     @Column(name="amount")
-    private Double amount;//change to bigDecimal
+    private Double amount;
 
     @Column(name="currency")
     private String currency;

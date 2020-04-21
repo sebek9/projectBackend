@@ -31,14 +31,14 @@ public class CreditController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/deleteCredit")
-    public void deleteCredit(@PathVariable Long creditId){
+    public void deleteCredit(@RequestParam Long creditId){
+        service.deleteCredit(creditId);
 
     }
     @RequestMapping(method = RequestMethod.PUT,value = "/updateCredit")
     public CreditDto updateCredit(@RequestBody CreditDto creditDto){
         return creditMapper.mapToCreditDto(service.saveCredit(creditMapper.mapToCredit(creditDto))); }
 
-    //
     @RequestMapping(method = RequestMethod.POST,value = "/createCredit",consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createCredit(@RequestBody CreditDto creditDto){
         service.saveCredit(creditMapper.mapToCredit(creditDto));
