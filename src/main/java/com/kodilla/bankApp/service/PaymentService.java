@@ -25,7 +25,7 @@ public class PaymentService {
     }
     public Payment savePayment(final Payment payment){
         //do poprawy - email dziala
-    emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Nowa płatność","Płatnośc została zlecona"));
+ //   emailService.send(new Mail("sebastian.kalinkowski@gmail.com","Nowa płatność","Płatnośc została zlecona"));
         return repository.save(payment);
     }
 

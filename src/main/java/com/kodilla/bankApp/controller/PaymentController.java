@@ -36,7 +36,7 @@ public class PaymentController {
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/deletePayment")
     public void deletePayment(@RequestParam Long paymentId){
-
+        service.deletePayment(paymentId);
     }
     @RequestMapping(method = RequestMethod.PUT,value = "/updatePayment")
     public PaymentDto updatePayment(@RequestBody PaymentDto paymentDto){
