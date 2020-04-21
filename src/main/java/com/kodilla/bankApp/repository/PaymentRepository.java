@@ -17,4 +17,7 @@ public interface PaymentRepository extends CrudRepository<Payment,Long> {
 
     @Override
     Payment save(Payment payment);
+
+    @Override
+    void deleteById(Long id);
 }
