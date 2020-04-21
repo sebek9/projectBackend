@@ -2,7 +2,7 @@
 
 #najnowszy commit backend - > https://github.com/sebek9/projectBackend/commit/b9a033be0f4d5fccdc8eadd362543a84b8553c0c
 
-#Link do repo aplikacji front-end - > 
+#Link do repo aplikacji front-end - > https://github.com/sebek9/bankApp
 
 #backend jest zdeployowany na heroku - > https://thawing-cliffs-43759.herokuapp.com/
 np. https://thawing-cliffs-43759.herokuapp.com/v1/payment/getPayments
