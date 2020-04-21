@@ -1,5 +1,7 @@
 # projectBackend
 
+#najnowszy commit backend - > https://github.com/sebek9/projectBackend/commit/b9a033be0f4d5fccdc8eadd362543a84b8553c0c
+
 #Link do repo aplikacji front-end - > 
 
 #backend jest zdeployowany na heroku - > https://thawing-cliffs-43759.herokuapp.com/
